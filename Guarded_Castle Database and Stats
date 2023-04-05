@@ -1,0 +1,22 @@
+/**Guarded_Castle:
+Romper (5, 22)
+Jean (7, 32)
+Bodysuit (3, 48)
+Dress (6, 18)
+Skirt (3, 24)
+**/
+
+CREATE TABLE Guarded_Castle (id INTEGER PRIMARY KEY, item TEXT, sold INTEGER, price INTEGER);
+
+INSERT into Guarded_Castle VALUES (1, "Romper", 5, 22);
+INSERT into Guarded_Castle Values (2, "Jean", 7, 32);
+INSERT into Guarded_Castle VALUES (3, "Bodysuit", 3, 48);
+INSERT into Guarded_Castle Values (4, "Dress", 6, 18);
+INSERT into Guarded_Castle Values (5, "Skirt", 3, 24);
+
+SELECT * FROM Guarded_Castle ORDER BY price; 
+
+SELECT SUM(sold) FROM Guarded_Castle;
+
+This database was a mock trial of a clothing boutique. Notice how a iventory was created for the store then displayed in order by price.
+The next statement displays the amount of all the items sold.
