@@ -1,0 +1,61 @@
+/* Create table about the people and what they do here */
+CREATE TABLE MARVEL_CAST
+    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    gender TEXT,
+    age INTEGER,
+    birth_place TEXT,
+    married TEXT,
+    partner TEXT);
+    
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Scarlett Johanson", "female", "38", "Manhattan, NEW York, NY", "Yes", "Collin Jost");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Robert Downey Jr", "Male", "58", "Manhattan, New York, NY", "Yes", "Susan Downey");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Elizabeth Olsen", "Female", "34", "Sherman Oaks, Los Angeles, CA", "Yes", "Robbie Arnett");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Chris Evans", "Male", "41", "Boston, MA", "No", "None");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Angela Basset", "Female", "64", "New York, NY", "Yes", "Courtney B. Vance");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Samuel L Jackson", "Male", "74", "Washington, D.C.", "Yes", "LaTanya Richardson Jackson");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Zendaya Coleman", "Female", "26", "Oakland, CA", "No", "None");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Chadwick Boseman", "Male", "44", "Anderson, SC", "Yes", "Taylor Ledward");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Anthony Mackie", "Male", "44", "New Orleans, LA", "Yes", "Sheletta Chapital");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Rachel McAdams", "female", "44", "London, Canada", "No", "None");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Marisa Tomei", "Female", "58", "Brooklyn, New York, NY", "No", "None");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Mark Ruffalo", "Male", "55", "Kenosha, WI", "Yes", "Sunrise Coigney");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Lupita Nyong'o", "Female", "40", "Mexico City, Mexico", "No", "None");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Salma Hayek", "Female", "56", "Coatzacoalcos, Mexico", "Yes", "Francois-Henri Pinault");
+INSERT INTO Marvel_Cast(fullname, gender, age, birth_place, married, partner) Values ("Benedict Cumberbatch", "Male", "46", "London, United Kingdom", "Yes", "Sophia Hunter");
+
+CREATE TABLE Movie_Selection
+    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    movie_title TEXT);
+    
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Scarlett Johanson", "Avenger's End Game");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Robert Downey Jr", "Avenger's");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Elizabeth Olsen", "Avenger's: Age of Ultron");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Chris Evans", "Avenger's End Game");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Angela Basset", "Wakanda Forever");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Samuel L Jackson", "Avenger's: Age of Ultron");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Zendaya Coleman", "Spider-man: Homecoming");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Chadwick Boseman", "Wakanda Forever");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Anthony Mackie", "Wakanda Forever");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Rachel McAdams", "Multiverse of Madness");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Marisa Tomei", "Spider-man: Homecoming");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Mark Ruffalo", "Avenger's");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Lupita Nyong'o", "Wakanda Forever");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Salma Hayek", "Eternals");
+INSERT INTO Movie_Selection (fullname, movie_title) Values ("Benedict Cumberbatch", "Multiverse of Madness");
+
+SELECT movie_selection.movie_title, Count(marvel_cast.fullname) Actor_Count
+    From marvel_cast
+    Join movie_selection
+    On movie_selection.fullname = marvel_cast.fullname
+    Group by movie_selection.movie_title;
+    
+SELECT marvel_cast.age, movie_selection.fullname
+    FROM marvel_cast
+    Left Outer Join movie_selection
+    ON marvel_cast.fullname = movie_selection.fullname
+    ORDER By age ASC;
+    
+I used SQL to aggregate data using multiple joins to select relevant information about movies from a database and grouped them based on movie title. Initially I wanted to know how many of the actors/ actresses in the table were in which movies.
+Then I wanted to know then age of the cast and ordered the information by age in ascending order.
