@@ -1,0 +1,37 @@
+SELECT *
+  FROM BIT_DB.JanSales
+ LIMIT 5;
+
+SELECT *
+  FROM BIT_DB.customers;
+
+SELECT count(orderID) 
+  FROM BIT_DB.JanSales
+ WHERE length(orderid) = 6 AND 
+       orderid <> 'Order ID';
+
+SELECT count(orderID) 
+  FROM BIT_DB.JanSales
+ WHERE product = 'iPhone' AND 
+       orderid <> 'Order ID';
+
+SELECT acctnum
+  FROM BIT_DB.FebSales
+       INNER JOIN
+       BIT_DB.customers
+ WHERE length(orderid) = 6 AND 
+       orderid <> 'Order ID';
+
+SELECT DISTINCT Product,
+                price
+  FROM BIT_DB.JanSales
+ ORDER BY price ASC
+ LIMIT 5;
+
+SELECT product,
+       Round(SUM(price) ) AS Revenue
+  FROM BIT_DB.JanSales
+ WHERE length(orderid) = 6 AND 
+       orderid <> 'Order ID'
+ GROUP BY product
+ ORDER BY revenue ASC;
