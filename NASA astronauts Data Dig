@@ -409,5 +409,5 @@ SELECT Count(Missions) Total_Missions, SUM(Space_Walks) Total_Walks from astrona
 Initially I extracted the data to show me the average walk time based on walks taken by each astronaut.
 Once this information was gathered I then labeled the walks in reference to rank of experience and then calculate how many walks were taken in tootal.
 
-Ulyimately, I used SQL to aggregate data using multiple cases to select relevant users from a database and group them by avgerage walk hours.
+Ultimately, I used SQL to aggregate data using multiple cases to select relevant users from a database and group them by avgerage walk hours.
 
