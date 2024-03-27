@@ -13,15 +13,16 @@ I welcome any feedback or suggestions for improvement on these projects. Feel fr
 
 
 Contents
-1. Project 1: Superstore
-Description: This project involves analyzing sales data to identify trends and patterns, including avergae products prices and the isolation of certain items and their performance.
+1. Superstore Analysis Project: Superstore
+Description: This project involves analyzing sales data to identify trends and patterns, including average products prices and the isolation of certain items and their performance.
 Files: Superstore_data.sql
-
-
-3. Project 2: Employee Database Management
+2. Fortune 500 Analysis Project
+Description: This project involves analyzing company data to identify industry type, benefits, and salaries as using SQL queries and analysis techniques.
+Files: Fortune500.sql
+4. Project 2: Employee Database Management
 Description: This project involves creating and managing an employee database, including tables for employees, departments, and salaries. It also includes SQL queries for retrieving employee information and generating reports.
 Files: employee_db_schema.sql, employee_queries.sql
-4. Project 3: Customer Segmentation
+5. Project 3: Customer Segmentation
 Description: This project involves segmenting customers based on their purchasing behavior and demographics using SQL queries and analysis techniques.
 Files: customer_segmentation.sql
 Usage
