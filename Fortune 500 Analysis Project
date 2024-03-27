@@ -55,3 +55,44 @@ VALUES
     ('Company II', 'Telecommunications', 110.5, 2000, 1, 21, 12, 4.9),
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
+
+--Total Data
+
+SELECT *
+FROM fortune_companies;
+
+--How many companies fall into each revenue pay level category?
+
+SELECT COUNT(company_name) as CM
+,CASE
+	WHEN revenue >=500 THEN 'High'
+    WHEN revenue >=300 THEN 'Median'
+    WHEN revenue >=200 THEN 'Low'
+  ELSE 'Extremely Low'
+ END AS Revenue_Pay_Level
+FROM fortune_companies
+GROUP BY Revenue_Pay_Level
+ORDER BY revenue DESC;
+
+--What is the average revenue and average of average employee tenure for each industry?
+
+SELECT industry
+,ROUND(AVG(revenue)) as AVG_Revenue
+,ROUND(AVG(avg_employee_tenure)) as AVG_of_AVG_tenure
+FROM fortune_companies
+GROUP BY industry;
+
+--Which industries have a total number of employees greater than 250,000, and what is the sum of employees in each of those industries?
+
+SELECT SUM(employees)
+,industry
+FROM fortune_companies
+GROUP BY industry
+HAVING SUM(employees) > 250000;
+
+--Which companies have maternity leave weeks less than or equal to 6, or have any value in the column maternity_leave_weeks, and display all columns from the table, sorted by maternity_leave_weeks in descending order.
+
+SELECT *
+FROM fortune_companies
+Where maternity_leave_weeks<=6 OR maternity_leave_weeks
+ORDER BY maternity_leave_weeks DESC;
