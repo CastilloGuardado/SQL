@@ -21,9 +21,9 @@ Files: Fortune500.sql
 4. Netflix Analytics: Titles/ People Database Management
 Description: This project involves creating and managing a title and people database, including tables for title info and the people associated with each title. It also includes SQL queries for retrieving the information and generating reports required.
 Files: Netflix_Database.sql
-5. Project 3: Customer Segmentation
+5. Customer & Order Anaysis: Customer Segmentation
 Description: This project involves segmenting customers based on their purchasing behavior and demographics using SQL queries and analysis techniques.
-Files: customer_segmentation.sql
+Files: BIT_DB.sql
 
 There are more projects then mentioned so please do not hesitate to look around and again reach out if you have any question.
 
